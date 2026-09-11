@@ -21,7 +21,7 @@ OBSTYPE;;string;OBJECT,ZERO,FLAT,DARK,FOCUS;Image type: OBJECT, ZERO, FLAT, DARK
 CHANNEL;;integer;1,4;Instrument channel: 1 (g), 2 (r), 3 (i), 4 (z)
 CHANNEL1;CHANNEL 1;boolean;true,false;Channel 1 is on (T) or off (F)
 CHANNEL2;CHANNEL 2;boolean;true,false;Channel 2 is on (T) or off (F)
-CCDSERN;;integer;9914,20000;CCD serial number
+CCDSERN;;integer;31564,29932;CCD serial number
 FILENAME;;string;;File name
 DATE-OBS;;string;;UTC at start of observation (isot)
 UTTIME;;string;;UTC time at start of observation
@@ -33,6 +33,7 @@ FRAMEIND;;integer;1,91500;Frame index in sequence
 EXPTIME;;float;0.00001,86400;Exposure time (s)
 ACQMODE;;string;Single Scan,Kinetics;Acquisition mode
 PREAMP;;string;Gain 1,Gain 2, Gain 4;Pre-amplifier gain
+HIGHCAP;;boolean;true,false;(still need a comment)
 READRATE;;float;0.05, 1.0, 3.0, 5.0;Readout rate (MHz)
 VSHIFT;;float;38.55, 76.95;Vertical shift speed (ms)
 TRIGGER;;string;Internal,External;Trigger mode
