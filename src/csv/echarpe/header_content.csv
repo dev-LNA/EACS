@@ -68,3 +68,6 @@ GUIVRSN;;string;;EGUI software version
 SDKVRSN;;string;;Camera SDK version
 CTRLINTE;;string;EGUI,EGEI;Graphical control interface of ACS
 ACSMODE;;boolean;true,false;ACS: real (T) or simulated (F)
+DATEFILE;;string;;File creation date
+CHECKSUM;;string;;HDU checksum
+DATASUM;;string;;Data unit checksum
