@@ -21,7 +21,8 @@ from header_formatter.utils import (
     WS_json,
     egui_json,
     focuser_json,
-    general_kw,
+    general_ech_kw,
+    general_s4_kw,
     ics_kw,
     ikon_kw,
     ixon_kw,
@@ -42,7 +43,7 @@ class Test_Everything(unittest.TestCase):
         self._hdr_data["FOCUSER"] = json.dumps(focuser_json)
         self._hdr_data["ICS"] = json.dumps(ics_kw)
         self._hdr_data["TCS"] = json.dumps(tcs_json)
-        self._hdr_data["GENERAL KW"] = json.dumps(general_kw)
+        self._hdr_data["GENERAL KW"] = json.dumps(general_s4_kw)
 
         setup = Header_Class_Setup("sparc4")
         self.hdr, hdr_data, hdr_cnt, log_file, file_name = setup.create_setup(
@@ -91,11 +92,11 @@ class Test_Everything(unittest.TestCase):
         self._hdr_data["FOCUSER"] = json.dumps(focuser_json)
         self._hdr_data["ICS"] = json.dumps(ics_kw)
         self._hdr_data["TCS"] = json.dumps(tcs_json)
-        self._hdr_data["GENERAL KW"] = json.dumps(general_kw)
+        self._hdr_data["GENERAL KW"] = json.dumps(general_ech_kw)
 
         setup = Header_Class_Setup("echarpe")
         self.hdr, hdr_data, hdr_cnt, log_file, file_name = setup.create_setup(
-            json.dumps(self._hdr_data), "YYYYMMDD_s4c1_000000.fits"
+            json.dumps(self._hdr_data), "YYYYMMDDECHRED000000o.fits"
         )
 
         for obj in [

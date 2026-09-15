@@ -69,9 +69,9 @@ class Header_Class_Setup:
         if file_path.exists():
             now = datetime.now(timezone.utc)
             now = now.strftime("%Hh%Mm%Ss%f")[:-3] + "ms"
-            if self.instrument == "sparc4":
+            if self.instrument in ["sparc4", "tester"]:
                 reformatted_name = self._reformat_sparc4_file_name(file_path.name, now)
-            if self.instrument == "echarpe":
+            elif self.instrument == "echarpe":
                 reformatted_name = self._reformat_echarpe_file_name(file_path.name, now)
             else:
                 raise ValueError(f"Unknown instrument: {self.instrument}")
@@ -81,7 +81,7 @@ class Header_Class_Setup:
     @staticmethod
     def _reformat_sparc4_file_name(file_name: str, now: str) -> str:
         date, chnl, *idx = file_name.split("_")
-        return f"{date}_{now}_{chnl}_{idx}"
+        return f"{date}_{now}_{chnl}_{idx[0]}"
 
     @staticmethod
     def _reformat_echarpe_file_name(file_name: str, now: str) -> str:

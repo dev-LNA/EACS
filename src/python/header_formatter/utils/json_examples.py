@@ -142,10 +142,25 @@ egui_json = {
     "CHANNEL 2": False,
 }
 
-general_kw = {
+general_s4_kw = {
     "ACSVRSN": "v1.56.3",
     "ACSMODE": False,
-    "filename": "20260727_s4c1_000013.fits",
+    "filename": "00000000_s4c1_000001.fits",
+    "ncycles": 1,
+    "cyclind": 0,
+    "channel": 1,
+    "ACQERROR": False,
+    "SDKVRSN": "0.000.00000.0",
+    "seqindex": 0,
+    "nseq": 1,
+    "HWSYNC": False,
+    "WPPOSSEQ": "1,2,3,4,9,10,11,12,13,14,15,16",
+}
+
+general_ech_kw = {
+    "ACSVRSN": "v1.56.3",
+    "ACSMODE": False,
+    "filename": "20260727ECHRED000013c.fits",
     "ncycles": 1,
     "cyclind": 0,
     "channel": 1,
