@@ -281,7 +281,7 @@ class Header(ABC):
                         f'Keyword value "{val}" is not an instance of {repr(_type)}.',
                         hdr_kw,
                     )
-                    return
+                    continue
                 self.kws_types_checked[hdr_kw] = val
             except Exception as e:  # type:ignore
                 self._write_log_file(repr(e), hdr_kw)

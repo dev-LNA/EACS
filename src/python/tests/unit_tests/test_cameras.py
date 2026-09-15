@@ -256,21 +256,21 @@ class Test_iKon_L(unittest.TestCase):
 
     def test_fill_image_header(self) -> None:
         self.tester.check_kws_types()
-        # print(self.tester.kws_types_checked)
         self.tester.check_allowed_values()
-        # hdr = self.tester.fill_image_header(self.hdr)
-        # assert hdr["SHUTTER"] == "Closed"
-        # assert hdr["VCLKAMP"] == "Normal"
-        # assert hdr["NFRAMES"] == 1
-        # assert hdr["DATE-OBS"] == "0000-00-00T00:00:00.000000"
-        # assert hdr["UTDATE"] == "0000-00-00"
-        # assert hdr["UTTIME"] == "00:00:00.000000"
-        # assert hdr["CCDTEMP"] == -30
-        # assert hdr["TEMPST"] == "TEMPERATURE_STABILIZED"
-        # assert hdr["TGTEMP"] == -30
-        # assert hdr["COOLER"] is True
-        # assert hdr["NAXIS1"] == 1024
-        # assert hdr["NAXIS2"] == 1024
+        hdr = self.tester.fill_image_header(self.hdr)
+        assert hdr["SHUTTER"] == "Closed"
+        assert hdr["VCLKAMP"] == "Normal"
+        assert hdr["NFRAMES"] == 1
+        assert hdr["DATE-OBS"] == "0000-00-00T00:00:00.000000"
+        assert hdr["UTDATE"] == "0000-00-00"
+        assert hdr["UTTIME"] == "00:00:00.000000"
+        assert hdr["CCDTEMP"] == -30
+        assert hdr["TEMPST"] == "TEMPERATURE_STABILIZED"
+        assert hdr["TGTEMP"] == -30
+        assert hdr["COOLER"] is True
+        assert hdr["NAXIS1"] == 2048
+        assert hdr["NAXIS2"] == 2048
+        # TODO: confirmar valores abaixo
         # assert hdr["GAIN"] == 0.8
         # assert hdr["RDNOISE"] == 3.47
-        # assert hdr["VSHIFT"] == 4.33
+        assert hdr["VSHIFT"] == 76.95

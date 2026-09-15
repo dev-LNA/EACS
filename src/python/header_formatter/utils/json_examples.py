@@ -125,6 +125,23 @@ s4gui_json = {
     "TCSMODE": True,
 }
 
+egui_json = {
+    "OBJECT": "Test",
+    "OBSERVER": "Denis",
+    "CTRLINTE": "EGEI",
+    "PROJID": "ENG",
+    "SYNCMODE": "ASYNC",
+    "INSTMODE": "POLAR",
+    "FILTER": "CLEAR",
+    "OBSTYPE": "OBJECT",
+    "GUIVRSN": "v0.0.0",
+    "COMMENT": "",
+    "broker": "EGEI",
+    "timestamp": "0000-00-00T00:00:00.0",
+    "CHANNEL 1": True,
+    "CHANNEL 2": False,
+}
+
 general_kw = {
     "ACSVRSN": "v1.56.3",
     "ACSMODE": False,
@@ -139,7 +156,7 @@ general_kw = {
     "HWSYNC": False,
     "WPPOSSEQ": "1,2,3,4,9,10,11,12,13,14,15,16",
 }
-ccd_kw = {
+ixon_kw = {
     "FILENAME": "20260723_s4c1_000001.fits",
     "FRAMEIND": 0,
     "CCDTEMP": 0,
@@ -169,6 +186,36 @@ ccd_kw = {
     "FRAMETRF": True,
     "EMMODE": 1,
 }
+
+ikon_kw = {
+    "FILENAME": "20260723_s4c1_000001.fits",
+    "FRAMEIND": 0,
+    "CCDTEMP": 0,
+    "TEMPST": "TEMPERATURE_OFF",
+    "CCDSERN": 31564,
+    "PREAMP": 0,
+    "READRATE": 0,
+    "VSHIFT": 0,
+    "VCLKAMP": 0,
+    "ACQMODE": 3,
+    "SHUTTER": 2,
+    "TRIGGER": 0,
+    "VBIN": 1,
+    "INITLIN": 1,
+    "INITCOL": 1,
+    "FINALLIN": 1024,
+    "FINALCOL": 1024,
+    "HBIN": 1,
+    "EXPTIME": 1.5,
+    "NFRAMES": 1,
+    "COOLER": 0,
+    "TGTEMP": 0,
+    "date-obs": "2026-07-23T18:47:59.719488",
+    "utdate": "2026-07-23",
+    "uttime": "18:47:59.719488",
+    "HIGHCAP": True,
+}
+
 ics_kw = {
     "broker": "S4ICS",
     "version": "v0.0.0",
