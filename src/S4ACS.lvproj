@@ -111,6 +111,7 @@
 				<Item Name="Channel ECHARPE.lvclass" Type="LVClass" URL="../LabVIEW/Channel ECHARPE/Channel ECHARPE.lvclass"/>
 				<Item Name="Camera Simulated iKon.lvclass" Type="LVClass" URL="../LabVIEW/Camera Simulated iKon/Camera Simulated iKon.lvclass"/>
 				<Item Name="Camera iKon L.lvclass" Type="LVClass" URL="../LabVIEW/Camera iKon L/Camera iKon L.lvclass"/>
+				<Item Name="Save Image ECHARPE.lvclass" Type="LVClass" URL="../../../EGEI/EGEI/Save Image ECHARPE/Save Image ECHARPE.lvclass"/>
 			</Item>
 			<Item Name="ABSTRACT" Type="Folder">
 				<Item Name="Save Image.lvclass" Type="LVClass" URL="../LabVIEW/Save Image/Save Image.lvclass"/>
