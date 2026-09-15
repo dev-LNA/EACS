@@ -25,8 +25,9 @@ class Post_Processor:
             },
         }
 
-    def process(self) -> None:
-        self._rotate_image()
+    def process(self, rotate_image: bool = False) -> None:
+        if rotate_image:
+            self._rotate_image()
         hdu = fits.PrimaryHDU(self.data, self.hdr)
         hdu = self._fix_standard_keywords(hdu)
         hdu.writeto(self.file_name)

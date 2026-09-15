@@ -12,6 +12,7 @@ from header_formatter.header import (
     Weather_Station,
     iKon_L,
 )
+from header_formatter.post_processor import Post_Processor
 from header_formatter.setup import Header_Class_Setup
 
 
@@ -51,9 +52,11 @@ def main(
             obj.check_allowed_values()
             hdr = obj.fill_image_header(hdr)
 
-        data = np.array(data, dtype=np.uint16)  # type: ignore
-        hdu = fits.PrimaryHDU(data, hdr)
-        hdu.writeto(file_name)
+        processor = Post_Processor(file_name, data, hdr)
+        processor.process()
+        # data = np.array(data, dtype=np.uint16)  # type: ignore
+        # hdu = fits.PrimaryHDU(data, hdr)
+        # hdu.writeto(file_name)
     except Exception:
         error_json.status = True
         error_json.code = 1

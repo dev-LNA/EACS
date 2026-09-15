@@ -65,14 +65,27 @@ class Header_Class_Setup:
         kws_specs.validate_specifications()
         return kws_specs
 
-    @staticmethod
-    def verify_file_exists(file_path: Path) -> Path:
+    def verify_file_exists(self, file_path: Path) -> Path:
         if file_path.exists():
             now = datetime.now(timezone.utc)
-            now = now.strftime("h%Hm%Ms%Sms%f")
-            date, chnl, idx = file_path.name.split("_")
-            return file_path.parent / f"{date}_{now}_{chnl}_{idx}"
+            now = now.strftime("%Hh%Mm%Ss%f")[:-3] + "ms"
+            if self.instrument == "sparc4":
+                reformatted_name = self._reformat_sparc4_file_name(file_path.name, now)
+            if self.instrument == "echarpe":
+                reformatted_name = self._reformat_echarpe_file_name(file_path.name, now)
+            else:
+                raise ValueError(f"Unknown instrument: {self.instrument}")
+            return file_path.parent / reformatted_name
         return file_path
+
+    @staticmethod
+    def _reformat_sparc4_file_name(file_name: str, now: str) -> str:
+        date, chnl, *idx = file_name.split("_")
+        return f"{date}_{now}_{chnl}_{idx}"
+
+    @staticmethod
+    def _reformat_echarpe_file_name(file_name: str, now: str) -> str:
+        return file_name[:8] + "_" + now + "_" + file_name[8:]
 
     @staticmethod
     def _create_today_str() -> str:

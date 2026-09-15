@@ -52,7 +52,7 @@ def main(
             hdr = obj.fill_image_header(hdr)
 
         processor = Post_Processor(file_name, data, hdr)
-        processor.process()
+        processor.process(rotate_image=True)
     except Exception:
         error_json.status = True
         error_json.code = 1
