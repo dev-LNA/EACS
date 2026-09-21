@@ -6,16 +6,16 @@ from header_formatter.header import (
     General_SPARC4_KWs,
 )
 from header_formatter.setup import Header_Class_Setup
-from header_formatter.utils import general_kw
+from header_formatter.utils import general_s4_kw
 
 
 class Test_General_Kws(unittest.TestCase):
     def setUp(self) -> None:
-        self._general_kw = {k.upper(): v for (k, v) in general_kw.items()}
+        self._general_kw = {k.upper(): v for (k, v) in general_s4_kw.items()}
         self._hdr_data = dict.fromkeys(
             ["CCD", "GUI", "ICS", "FOCUSER", "WSTATION", "GENERAL KW", "TCS"], "{}"
         )
-        self._hdr_data["GENERAL KW"] = json.dumps(general_kw)
+        self._hdr_data["GENERAL KW"] = json.dumps(general_s4_kw)
         setup = Header_Class_Setup("sparc4")
         self.hdr, hdr_data, hdr_cnt, log_file, file_name = setup.create_setup(
             json.dumps(self._hdr_data), "00000000_s4c1_000001.fits"
@@ -40,11 +40,11 @@ class Test_General_Kws(unittest.TestCase):
 
 class Test_General_SPARC4_Kws(unittest.TestCase):
     def setUp(self) -> None:
-        self._general_kw = {k.upper(): v for (k, v) in general_kw.items()}
+        self._general_kw = {k.upper(): v for (k, v) in general_s4_kw.items()}
         self._hdr_data = dict.fromkeys(
             ["CCD", "GUI", "ICS", "FOCUSER", "WSTATION", "GENERAL KW", "TCS"], "{}"
         )
-        self._hdr_data["GENERAL KW"] = json.dumps(general_kw)
+        self._hdr_data["GENERAL KW"] = json.dumps(general_s4_kw)
         setup = Header_Class_Setup("sparc4")
         self.hdr, hdr_data, hdr_cnt, log_file, file_name = setup.create_setup(
             json.dumps(self._hdr_data), "00000000_s4c1_000001.fits"

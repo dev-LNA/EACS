@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 import numpy as np
@@ -6,28 +6,28 @@ from astropy.io import fits
 
 
 class Post_Processor:
-    IMAGE_ROTATION_MAP: dict = {
-        "Conventional": {
-            1: [False, True, 2],
-            2: [False, False, 0],
-            3: [True, False, -1],
-            4: [False, False, -1],
-        },
-        "Electron Multiplying": {
-            1: [True, True, 2],
-            2: [True, False, 0],
-            3: [False, False, -1],
-            4: [True, False, -1],
-        },
-    }
-
     def __init__(self, file_name: Path, data: np.ndarray, hdr: fits.Header) -> None:
         self.file_name = file_name
         self.data = np.array(data, dtype=np.uint16)  # type: ignore
         self.hdr = hdr
+        self.IMAGE_ROTATION_MAP: dict = {
+            "Conventional": {
+                1: [False, True, 2],
+                2: [False, False, 0],
+                3: [True, False, -1],
+                4: [False, False, -1],
+            },
+            "Electron Multiplying": {
+                1: [True, True, 2],
+                2: [True, False, 0],
+                3: [False, False, -1],
+                4: [True, False, -1],
+            },
+        }
 
-    def process(self) -> None:
-        self._rotate_image()
+    def process(self, rotate_image: bool = False) -> None:
+        if rotate_image:
+            self._rotate_image()
         hdu = fits.PrimaryHDU(self.data, self.hdr)
         hdu = self._fix_standard_keywords(hdu)
         hdu.writeto(self.file_name)

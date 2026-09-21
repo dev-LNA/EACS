@@ -43,7 +43,7 @@ class Test_Setup(unittest.TestCase):
         fits.writeto(file_path, np.zeros((1, 1)))
         assert (
             re.match(
-                r"^00000000_h\d{2}m\d{2}s\d{2}ms\d{6}_s4c1_000000.fits$",
+                r"^00000000_\d{2}h\d{2}m\d{2}s\d{3}ms_s4c1_000000.fits$",
                 self.setup.verify_file_exists(file_path).name,
             )
             is not None

@@ -21,9 +21,7 @@ class CCD(Header):
         self.gain_values = pd.read_csv(
             kws_specs.csv_folder / "camera" / "preamp_gains.csv"
         )
-        self.rd_values = pd.read_csv(
-            kws_specs.csv_folder / "camera" / "read_noises.csv"
-        )
+        self.rd_values = pd.read_csv(kws_specs.csv_folder / "camera" / "read_noises.csv")
 
     def fix_keywords(self) -> None:
         super().fix_keywords()
@@ -91,4 +89,7 @@ class iXon_Ultra(CCD):
 
 
 class iKon_L(CCD):
-    pass
+    def _find_index_tab(self) -> None:
+        super()._find_index_tab()
+        if not self.extracted_data["HIGHCAP"]:
+            self.idx_tab += 1

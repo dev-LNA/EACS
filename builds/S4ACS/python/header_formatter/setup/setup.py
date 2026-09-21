@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-import astropy.io.fits as fits
+from astropy.io import fits
 from header_formatter.data_types import External_Applications, Test_Applications
 from header_formatter.header_content import Header_Content
 from header_formatter.keywords_specs import Keywords_Specifications
@@ -16,7 +16,7 @@ class Header_Class_Setup:
     }
 
     def __init__(self, instrument: str) -> None:
-        if instrument not in self.ext_app_classes.keys():
+        if instrument not in self.ext_app_classes:
             raise ValueError(f"Unknown instrument: {instrument}")
         self.instrument = instrument
         self.acs_config = read_config_file(instrument)
@@ -65,14 +65,27 @@ class Header_Class_Setup:
         kws_specs.validate_specifications()
         return kws_specs
 
-    @staticmethod
-    def verify_file_exists(file_path: Path) -> Path:
+    def verify_file_exists(self, file_path: Path) -> Path:
         if file_path.exists():
             now = datetime.now(timezone.utc)
-            now = now.strftime("h%Hm%Ms%Sms%f")
-            date, chnl, idx = file_path.name.split("_")
-            return file_path.parent / f"{date}_{now}_{chnl}_{idx}"
+            now = now.strftime("%Hh%Mm%Ss%f")[:-3] + "ms"
+            if self.instrument in ["sparc4", "tester"]:
+                reformatted_name = self._reformat_sparc4_file_name(file_path.name, now)
+            elif self.instrument == "echarpe":
+                reformatted_name = self._reformat_echarpe_file_name(file_path.name, now)
+            else:
+                raise ValueError(f"Unknown instrument: {self.instrument}")
+            return file_path.parent / reformatted_name
         return file_path
+
+    @staticmethod
+    def _reformat_sparc4_file_name(file_name: str, now: str) -> str:
+        date, chnl, *idx = file_name.split("_")
+        return f"{date}_{now}_{chnl}_{idx[0]}"
+
+    @staticmethod
+    def _reformat_echarpe_file_name(file_name: str, now: str) -> str:
+        return file_name[:8] + "_" + now + "_" + file_name[8:]
 
     @staticmethod
     def _create_today_str() -> str:
