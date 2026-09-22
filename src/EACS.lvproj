@@ -73,8 +73,8 @@
 			<Item Name="RxTx.lvclass" Type="LVClass" URL="../LabVIEW/RxTx/RxTx.lvclass"/>
 			<Item Name="Server.lvclass" Type="LVClass" URL="../LabVIEW/Server/Server.lvclass"/>
 			<Item Name="State Machine.lvclass" Type="LVClass" URL="../LabVIEW/State Machine/State Machine.lvclass"/>
-			<Item Name="EACS.vi" Type="VI" URL="../EACS.vi"/>
 		</Item>
+		<Item Name="EACS.vi" Type="VI" URL="../EACS.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Check if File or Folder Exists.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Check if File or Folder Exists.vi"/>
