@@ -583,8 +583,6 @@
 			<Item Name="read done signal.vi" Type="VI" URL="../LabVIEW/Camera Simulated iXon Ultra/read done signal.vi"/>
 			<Item Name="write advance signal.vi" Type="VI" URL="../LabVIEW/Camera Simulated iXon Ultra/write advance signal.vi"/>
 			<Item Name="read advance signal.vi" Type="VI" URL="../LabVIEW/Camera Simulated iXon Ultra/read advance signal.vi"/>
-			<Item Name="Read REP rxtx.vi" Type="VI" URL="../LabVIEW/ECP/Socket/Read REP rxtx.vi"/>
-			<Item Name="Write REP rxtx.vi" Type="VI" URL="../LabVIEW/ECP/Socket/Write REP rxtx.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
