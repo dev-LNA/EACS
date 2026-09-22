@@ -22,6 +22,18 @@
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
 		<Item Name="LabVIEW" Type="Folder">
+			<Item Name="Comm VIs" Type="Folder" URL="../LabVIEW/Comm VIs">
+				<Property Name="NI.DISK" Type="Bool">true</Property>
+			</Item>
+			<Item Name="General VIs" Type="Folder" URL="../LabVIEW/General VIs">
+				<Property Name="NI.DISK" Type="Bool">true</Property>
+			</Item>
+			<Item Name="utils" Type="Folder" URL="../LabVIEW/utils">
+				<Property Name="NI.DISK" Type="Bool">true</Property>
+			</Item>
+			<Item Name="Unit tests" Type="Folder" URL="../LabVIEW/Unit tests">
+				<Property Name="NI.DISK" Type="Bool">true</Property>
+			</Item>
 			<Item Name="ECP" Type="Folder">
 				<Item Name="General VIs" Type="Folder" URL="../LabVIEW/ECP/General VIs">
 					<Property Name="NI.DISK" Type="Bool">true</Property>
@@ -67,18 +79,6 @@
 				<Item Name="msvcr120.dll" Type="Document" URL="../LabVIEW/zeromq/msvcr120.dll"/>
 				<Item Name="Packed Library Path.vi" Type="VI" URL="../LabVIEW/zeromq/Packed Library Path.vi"/>
 				<Item Name="zmq.h" Type="Document" URL="../LabVIEW/zeromq/zmq.h"/>
-			</Item>
-			<Item Name="Comm VIs" Type="Folder" URL="../LabVIEW/Comm VIs">
-				<Property Name="NI.DISK" Type="Bool">true</Property>
-			</Item>
-			<Item Name="General VIs" Type="Folder" URL="../LabVIEW/General VIs">
-				<Property Name="NI.DISK" Type="Bool">true</Property>
-			</Item>
-			<Item Name="utils" Type="Folder" URL="../LabVIEW/utils">
-				<Property Name="NI.DISK" Type="Bool">true</Property>
-			</Item>
-			<Item Name="Unit tests" Type="Folder" URL="../LabVIEW/Unit tests">
-				<Property Name="NI.DISK" Type="Bool">true</Property>
 			</Item>
 			<Item Name="Log File.lvclass" Type="LVClass" URL="../LabVIEW/Log File/Log File.lvclass"/>
 			<Item Name="Python Toolkit.lvclass" Type="LVClass" URL="../LabVIEW/Python Toolkit/Python Toolkit.lvclass"/>
