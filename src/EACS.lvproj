@@ -66,19 +66,25 @@
 				<Item Name="ECHARPE Cam OpMode.lvclass" Type="LVClass" URL="../LabVIEW/ECHARPE Cam OpMode/ECHARPE Cam OpMode.lvclass"/>
 				<Item Name="Camera Acquisition Configuration.lvclass" Type="LVClass" URL="../LabVIEW/Camera Acquisition Configuration/Camera Acquisition Configuration.lvclass"/>
 				<Item Name="Channel Configuration.lvclass" Type="LVClass" URL="../LabVIEW/Channel Configuration/Channel Configuration.lvclass"/>
+				<Item Name="Reply.lvclass" Type="LVClass" URL="../LabVIEW/Reply/Reply.lvclass"/>
 			</Item>
 			<Item Name="zeromq" Type="Folder">
-				<Item Name="zeromq.lvlib" Type="Library" URL="../LabVIEW/zeromq/zeromq.lvlib"/>
-				<Item Name="libsodium.dll" Type="Document" URL="../LabVIEW/zeromq/libsodium.dll"/>
-				<Item Name="libzmq-v120-mt-4_3_2.dll" Type="Document" URL="../LabVIEW/zeromq/libzmq-v120-mt-4_3_2.dll"/>
-				<Item Name="libzmq-v120-mt-4_3_2.lib" Type="Document" URL="../LabVIEW/zeromq/libzmq-v120-mt-4_3_2.lib"/>
-				<Item Name="lvzmq64.dll" Type="Document" URL="../LabVIEW/zeromq/lvzmq64.dll"/>
-				<Item Name="lvzmq64.exp" Type="Document" URL="../LabVIEW/zeromq/lvzmq64.exp"/>
-				<Item Name="lvzmq64.lib" Type="Document" URL="../LabVIEW/zeromq/lvzmq64.lib"/>
-				<Item Name="msvcp120.dll" Type="Document" URL="../LabVIEW/zeromq/msvcp120.dll"/>
-				<Item Name="msvcr120.dll" Type="Document" URL="../LabVIEW/zeromq/msvcr120.dll"/>
-				<Item Name="Packed Library Path.vi" Type="VI" URL="../LabVIEW/zeromq/Packed Library Path.vi"/>
-				<Item Name="zmq.h" Type="Document" URL="../LabVIEW/zeromq/zmq.h"/>
+				<Item Name="zeromq.lvlib" Type="Library" URL="/&lt;vilib&gt;/addons/zeromq/zeromq.lvlib"/>
+				<Item Name="zmq_zap_example_globals.vi" Type="VI" URL="/&lt;vilib&gt;/addons/zeromq/zmq_zap_example_globals.vi"/>
+				<Item Name="zmq_zap_example_template.vi" Type="VI" URL="/&lt;vilib&gt;/addons/zeromq/zmq_zap_example_template.vi"/>
+				<Item Name="zmq_zap_init.vi" Type="VI" URL="/&lt;vilib&gt;/addons/zeromq/zmq_zap_init.vi"/>
+				<Item Name="zmq_zap_thread.vi" Type="VI" URL="/&lt;vilib&gt;/addons/zeromq/zmq_zap_thread.vi"/>
+				<Item Name="zmq_zap_thread_basic.vi" Type="VI" URL="/&lt;vilib&gt;/addons/zeromq/zmq_zap_thread_basic.vi"/>
+				<Item Name="zmq_zap_verify.vi" Type="VI" URL="/&lt;vilib&gt;/addons/zeromq/zmq_zap_verify.vi"/>
+				<Item Name="libsodium.dll" Type="Document" URL="/&lt;vilib&gt;/addons/zeromq/lib/win64/libsodium.dll"/>
+				<Item Name="libzmq-v120-mt-4_3_2.dll" Type="Document" URL="/&lt;vilib&gt;/addons/zeromq/lib/win64/libzmq-v120-mt-4_3_2.dll"/>
+				<Item Name="libzmq-v120-mt-4_3_2.lib" Type="Document" URL="/&lt;vilib&gt;/addons/zeromq/lib/win64/libzmq-v120-mt-4_3_2.lib"/>
+				<Item Name="lvzmq64.dll" Type="Document" URL="/&lt;vilib&gt;/addons/zeromq/lib/win64/lvzmq64.dll"/>
+				<Item Name="lvzmq64.exp" Type="Document" URL="/&lt;vilib&gt;/addons/zeromq/lib/win64/lvzmq64.exp"/>
+				<Item Name="lvzmq64.lib" Type="Document" URL="/&lt;vilib&gt;/addons/zeromq/lib/win64/lvzmq64.lib"/>
+				<Item Name="msvcp120.dll" Type="Document" URL="/&lt;vilib&gt;/addons/zeromq/lib/win64/msvcp120.dll"/>
+				<Item Name="msvcr120.dll" Type="Document" URL="/&lt;vilib&gt;/addons/zeromq/lib/win64/msvcr120.dll"/>
+				<Item Name="zmq.h" Type="Document" URL="/&lt;vilib&gt;/addons/zeromq/lib/win64/zmq.h"/>
 			</Item>
 			<Item Name="Log File.lvclass" Type="LVClass" URL="../LabVIEW/Log File/Log File.lvclass"/>
 			<Item Name="Python Toolkit.lvclass" Type="LVClass" URL="../LabVIEW/Python Toolkit/Python Toolkit.lvclass"/>
@@ -94,7 +100,6 @@
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
 				<Item Name="NI_PackedLibraryUtility.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/LVLibp/NI_PackedLibraryUtility.lvlib"/>
 				<Item Name="Space Constant.vi" Type="VI" URL="/&lt;vilib&gt;/dlg_ctls.llb/Space Constant.vi"/>
-				<Item Name="zeromq.lvlib" Type="Library" URL="/&lt;vilib&gt;/addons/zeromq/zeromq.lvlib"/>
 				<Item Name="Application Directory.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Application Directory.vi"/>
 				<Item Name="System Directory Type.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/sysdir.llb/System Directory Type.ctl"/>
 				<Item Name="Get System Directory.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/sysdir.llb/Get System Directory.vi"/>
@@ -542,47 +547,18 @@
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
 			<Item Name="choose firs acquisition state.vi" Type="VI" URL="../LabVIEW/Channel ECHARPE/choose firs acquisition state.vi"/>
-			<Item Name="Application Directory.vi" Type="VI" URL="../LabVIEW/S4ACS.exe/1abvi3w/vi.lib/Utility/file.llb/Application Directory.vi"/>
-			<Item Name="NI_PackedLibraryUtility.lvlib" Type="Library" URL="../LabVIEW/S4ACS.exe/1abvi3w/vi.lib/Utility/LVLibp/NI_PackedLibraryUtility.lvlib"/>
-			<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="../LabVIEW/S4ACS.exe/1abvi3w/vi.lib/Utility/error.llb/Error Cluster From Error Code.vi"/>
 			<Item Name="Channel SPARC4.lvclass" Type="LVClass" URL="../LabVIEW/Channel SPARC4/Channel SPARC4.lvclass"/>
 			<Item Name="Camera Simulated iXon Ultra.lvclass" Type="LVClass" URL="../LabVIEW/Camera Simulated iXon Ultra/Camera Simulated iXon Ultra.lvclass"/>
-			<Item Name="SPARC4 Channel Config.lvclass" Type="LVClass" URL="../LabVIEW/SPARC4 Channel Config/SPARC4 Channel Config.lvclass"/>
 			<Item Name="SPARC4 Cam OpMode.lvclass" Type="LVClass" URL="../LabVIEW/SPARC4 Cam OpMode/SPARC4 Cam OpMode.lvclass"/>
 			<Item Name="Camera Simulated iXon Ultra.ctl" Type="VI" URL="../LabVIEW/Camera Simulated iXon Ultra/Camera Simulated iXon Ultra.lvclass/Camera Simulated iXon Ultra.ctl"/>
-			<Item Name="SPARC4 Channel Config.ctl" Type="VI" URL="../LabVIEW/SPARC4 Channel Config/SPARC4 Channel Config.lvclass/SPARC4 Channel Config.ctl"/>
-			<Item Name="Channel SPARC4.ctl" Type="VI" URL="../LabVIEW/Channel SPARC4/Channel SPARC4.lvclass/Channel SPARC4.ctl"/>
 			<Item Name="write done signal.vi" Type="VI" URL="../LabVIEW/Camera Simulated iXon Ultra/write done signal.vi"/>
-			<Item Name="Write new s4 acq config.vi" Type="VI" URL="../LabVIEW/Channel SPARC4/Write new s4 acq config.vi"/>
-			<Item Name="Read prev s4 acq config.vi" Type="VI" URL="../LabVIEW/Channel SPARC4/Read prev s4 acq config.vi"/>
 			<Item Name="Write s4 channel status.vi" Type="VI" URL="../LabVIEW/Channel SPARC4/Write s4 channel status.vi"/>
-			<Item Name="Write sync mode.vi" Type="VI" URL="../LabVIEW/Channel SPARC4/Write sync mode.vi"/>
-			<Item Name="Read sync mode.vi" Type="VI" URL="../LabVIEW/Channel SPARC4/Read sync mode.vi"/>
-			<Item Name="Read s4 acq config class.vi" Type="VI" URL="../LabVIEW/Channel SPARC4/Read s4 acq config class.vi"/>
-			<Item Name="Write s4 acq config errors.vi" Type="VI" URL="../LabVIEW/Channel SPARC4/Write s4 acq config errors.vi"/>
-			<Item Name="Write prev s4 acq config.vi" Type="VI" URL="../LabVIEW/Channel SPARC4/Write prev s4 acq config.vi"/>
-			<Item Name="Read new s4 acq config.vi" Type="VI" URL="../LabVIEW/Channel SPARC4/Read new s4 acq config.vi"/>
-			<Item Name="Write new channel config.vi" Type="VI" URL="../LabVIEW/SPARC4 Channel Config/Write new channel config.vi"/>
-			<Item Name="Read prev channel config.vi" Type="VI" URL="../LabVIEW/SPARC4 Channel Config/Read prev channel config.vi"/>
-			<Item Name="Write sparc4 errors.vi" Type="VI" URL="../LabVIEW/SPARC4 Channel Config/Write sparc4 errors.vi"/>
-			<Item Name="Write prev channel config.vi" Type="VI" URL="../LabVIEW/SPARC4 Channel Config/Write prev channel config.vi"/>
-			<Item Name="Read new channel config.vi" Type="VI" URL="../LabVIEW/SPARC4 Channel Config/Read new channel config.vi"/>
-			<Item Name="write channel config.vi" Type="VI" URL="../LabVIEW/Channel SPARC4/write channel config.vi"/>
-			<Item Name="get waveplate status.vi" Type="VI" URL="../LabVIEW/Channel SPARC4/get waveplate status.vi"/>
-			<Item Name="get instrument mode.vi" Type="VI" URL="../LabVIEW/Channel SPARC4/get instrument mode.vi"/>
-			<Item Name="Read #SEQS.vi" Type="VI" URL="../LabVIEW/SPARC4 Channel Config/Read #SEQS.vi"/>
-			<Item Name="Read Waveplate positions.vi" Type="VI" URL="../LabVIEW/SPARC4 Channel Config/Read Waveplate positions.vi"/>
-			<Item Name="Write #SEQS.vi" Type="VI" URL="../LabVIEW/SPARC4 Channel Config/Write #SEQS.vi"/>
-			<Item Name="Write Waveplate positions.vi" Type="VI" URL="../LabVIEW/SPARC4 Channel Config/Write Waveplate positions.vi"/>
-			<Item Name="parse wppos.vi" Type="VI" URL="../LabVIEW/SPARC4 Channel Config/parse wppos.vi"/>
-			<Item Name="Read new ixon op mode.vi" Type="VI" URL="../LabVIEW/SPARC4 Cam OpMode/Read new ixon op mode.vi"/>
-			<Item Name="Read prev ixon op mode.vi" Type="VI" URL="../LabVIEW/SPARC4 Cam OpMode/Read prev ixon op mode.vi"/>
-			<Item Name="Write new ixon op mode.vi" Type="VI" URL="../LabVIEW/SPARC4 Cam OpMode/Write new ixon op mode.vi"/>
-			<Item Name="Write prev ixon op mode.vi" Type="VI" URL="../LabVIEW/SPARC4 Cam OpMode/Write prev ixon op mode.vi"/>
-			<Item Name="verify readout rate.vi" Type="VI" URL="../LabVIEW/SPARC4 Cam OpMode/verify readout rate.vi"/>
 			<Item Name="read done signal.vi" Type="VI" URL="../LabVIEW/Camera Simulated iXon Ultra/read done signal.vi"/>
 			<Item Name="write advance signal.vi" Type="VI" URL="../LabVIEW/Camera Simulated iXon Ultra/write advance signal.vi"/>
 			<Item Name="read advance signal.vi" Type="VI" URL="../LabVIEW/Camera Simulated iXon Ultra/read advance signal.vi"/>
+			<Item Name="sparc4 channel.vi" Type="VI" URL="../LabVIEW/Unit tests/tests/sparc4 channel.vi"/>
+			<Item Name="sparc4 ch config.vi" Type="VI" URL="../LabVIEW/Unit tests/tests/sparc4 ch config.vi"/>
+			<Item Name="sparc4 cam opmode.vi" Type="VI" URL="../LabVIEW/Unit tests/tests/sparc4 cam opmode.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
