@@ -547,18 +547,6 @@
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
 			<Item Name="choose firs acquisition state.vi" Type="VI" URL="../LabVIEW/Channel ECHARPE/choose firs acquisition state.vi"/>
-			<Item Name="Channel SPARC4.lvclass" Type="LVClass" URL="../LabVIEW/Channel SPARC4/Channel SPARC4.lvclass"/>
-			<Item Name="Camera Simulated iXon Ultra.lvclass" Type="LVClass" URL="../LabVIEW/Camera Simulated iXon Ultra/Camera Simulated iXon Ultra.lvclass"/>
-			<Item Name="SPARC4 Cam OpMode.lvclass" Type="LVClass" URL="../LabVIEW/SPARC4 Cam OpMode/SPARC4 Cam OpMode.lvclass"/>
-			<Item Name="Camera Simulated iXon Ultra.ctl" Type="VI" URL="../LabVIEW/Camera Simulated iXon Ultra/Camera Simulated iXon Ultra.lvclass/Camera Simulated iXon Ultra.ctl"/>
-			<Item Name="write done signal.vi" Type="VI" URL="../LabVIEW/Camera Simulated iXon Ultra/write done signal.vi"/>
-			<Item Name="Write s4 channel status.vi" Type="VI" URL="../LabVIEW/Channel SPARC4/Write s4 channel status.vi"/>
-			<Item Name="read done signal.vi" Type="VI" URL="../LabVIEW/Camera Simulated iXon Ultra/read done signal.vi"/>
-			<Item Name="write advance signal.vi" Type="VI" URL="../LabVIEW/Camera Simulated iXon Ultra/write advance signal.vi"/>
-			<Item Name="read advance signal.vi" Type="VI" URL="../LabVIEW/Camera Simulated iXon Ultra/read advance signal.vi"/>
-			<Item Name="sparc4 channel.vi" Type="VI" URL="../LabVIEW/Unit tests/tests/sparc4 channel.vi"/>
-			<Item Name="sparc4 ch config.vi" Type="VI" URL="../LabVIEW/Unit tests/tests/sparc4 ch config.vi"/>
-			<Item Name="sparc4 cam opmode.vi" Type="VI" URL="../LabVIEW/Unit tests/tests/sparc4 cam opmode.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
