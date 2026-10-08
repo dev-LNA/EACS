@@ -642,6 +642,53 @@
 				<Property Name="TgtF_targetfileName" Type="Str">EACS.exe</Property>
 				<Property Name="TgtF_versionIndependent" Type="Bool">true</Property>
 			</Item>
+			<Item Name="Test_Temp" Type="EXE">
+				<Property Name="App_copyErrors" Type="Bool">true</Property>
+				<Property Name="App_INI_aliasGUID" Type="Str">{03426250-8E6C-434B-A4AE-0132DC7EE5D0}</Property>
+				<Property Name="App_INI_GUID" Type="Str">{118DA884-1E82-47F6-988D-2C605ADA6C78}</Property>
+				<Property Name="App_serverConfig.httpPort" Type="Int">8002</Property>
+				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
+				<Property Name="Bld_buildCacheID" Type="Str">{5A5C872A-F0E9-4EBF-A5B6-7C20339CD5E9}</Property>
+				<Property Name="Bld_buildSpecName" Type="Str">Test_Temp</Property>
+				<Property Name="Bld_excludeInlineSubVIs" Type="Bool">true</Property>
+				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
+				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
+				<Property Name="Bld_localDestDir" Type="Path">../builds/Test_Temp</Property>
+				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
+				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
+				<Property Name="Bld_previewCacheID" Type="Str">{F786C268-0AA1-456B-9900-FF9CE056EF53}</Property>
+				<Property Name="Bld_version.build" Type="Int">5</Property>
+				<Property Name="Bld_version.major" Type="Int">1</Property>
+				<Property Name="Destination[0].destName" Type="Str">Test_Temp.exe</Property>
+				<Property Name="Destination[0].path" Type="Path">../builds/Test_Temp/Test_Temp.exe</Property>
+				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
+				<Property Name="Destination[0].type" Type="Str">App</Property>
+				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
+				<Property Name="Destination[1].path" Type="Path">../builds/Test_Temp/data</Property>
+				<Property Name="Destination[2].destName" Type="Str">root</Property>
+				<Property Name="Destination[2].path" Type="Path">../builds/Test_Temp</Property>
+				<Property Name="DestinationCount" Type="Int">3</Property>
+				<Property Name="Source[0].itemID" Type="Str">{F5843F80-B3E8-41D7-8F14-9DF668739CC7}</Property>
+				<Property Name="Source[0].type" Type="Str">Container</Property>
+				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[1].itemID" Type="Ref">/My Computer/LabVIEW/General VIs/teste temp.vi</Property>
+				<Property Name="Source[1].properties[0].type" Type="Str">Run when opened</Property>
+				<Property Name="Source[1].properties[0].value" Type="Bool">false</Property>
+				<Property Name="Source[1].propertiesCount" Type="Int">1</Property>
+				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
+				<Property Name="Source[1].type" Type="Str">VI</Property>
+				<Property Name="Source[2].destinationIndex" Type="Int">2</Property>
+				<Property Name="Source[2].itemID" Type="Ref">/My Computer/utils/atmcd64d.dll</Property>
+				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="SourceCount" Type="Int">3</Property>
+				<Property Name="TgtF_fileDescription" Type="Str">Test_Temp</Property>
+				<Property Name="TgtF_internalName" Type="Str">Test_Temp</Property>
+				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2026 </Property>
+				<Property Name="TgtF_productName" Type="Str">Test_Temp</Property>
+				<Property Name="TgtF_targetfileGUID" Type="Str">{66753E6B-8749-403F-A5EF-E89329AC3CDB}</Property>
+				<Property Name="TgtF_targetfileName" Type="Str">Test_Temp.exe</Property>
+				<Property Name="TgtF_versionIndependent" Type="Bool">true</Property>
+			</Item>
 			<Item Name="EACS Installer" Type="Installer">
 				<Property Name="Destination[0].name" Type="Str">EACS</Property>
 				<Property Name="Destination[0].parent" Type="Str">{3912416A-D2E5-411B-AFEE-B63654D690C0}</Property>
