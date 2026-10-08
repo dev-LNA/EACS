@@ -554,6 +554,7 @@
 				<Property Name="App_INI_aliasGUID" Type="Str">{8F341990-9AA0-4211-888C-F4230FC7722F}</Property>
 				<Property Name="App_INI_GUID" Type="Str">{F0DAD85D-C3C1-402B-8198-43D4686C13D1}</Property>
 				<Property Name="App_serverConfig.httpPort" Type="Int">8002</Property>
+				<Property Name="App_waitDebugging" Type="Bool">true</Property>
 				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
 				<Property Name="Bld_buildCacheID" Type="Str">{EB1B55FE-0641-47EB-9E71-5948D0E89294}</Property>
 				<Property Name="Bld_buildSpecName" Type="Str">EACS</Property>
@@ -564,7 +565,7 @@
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{4690D4C7-A278-43B0-B896-E9234252F385}</Property>
-				<Property Name="Bld_version.build" Type="Int">7</Property>
+				<Property Name="Bld_version.build" Type="Int">9</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">EACS.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">../builds/NI_AB_PROJECTNAME/EACS.exe</Property>
@@ -632,6 +633,7 @@
 				<Property Name="Source[9].destinationIndex" Type="Int">3</Property>
 				<Property Name="Source[9].itemID" Type="Ref">/My Computer/utils/socket_TEMPLATE.cfg</Property>
 				<Property Name="SourceCount" Type="Int">10</Property>
+				<Property Name="TgtF_enableDebugging" Type="Bool">true</Property>
 				<Property Name="TgtF_fileDescription" Type="Str">EACS</Property>
 				<Property Name="TgtF_internalName" Type="Str">EACS</Property>
 				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2026 </Property>
