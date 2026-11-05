@@ -69,27 +69,13 @@ class CCD(Header):
         ) // self.fixed_data["HBIN"] + 1
 
 
-class iXon_Ultra(CCD):
-    def _find_index_tab(self) -> None:
-        _json = self.extracted_data
-        self.idx_tab = 8 * _json["EMMODE"] + 2 * _json["READRATE"] + _json["PREAMP"]
-
-    def fix_keywords(self) -> None:
-        super().fix_keywords()
-        self._write_READRATE()
-
-    def _write_READRATE(self) -> None:
-        _json = self.extracted_data
-        try:
-            self.fixed_data["READRATE"] = self.kws_specs.dict_w_kws["READRATE"][
-                _json["EMMODE"]
-            ][_json["READRATE"]]
-        except ValueError as e:
-            self._write_log_file(repr(e), "READRATE")
-
-
 class iKon_L(CCD):
     def _find_index_tab(self) -> None:
-        super()._find_index_tab()
-        if not self.extracted_data["HIGHCAP"]:
+        _json = self.extracted_data
+        preamp = _json["PREAMP"]
+        readout_map = {0.05: 0, 1: 6, 3: 12, 5: 18}
+        self.idx_tab = readout_map[_json["READRATE"]] + preamp
+        if preamp == 1:
+            self.idx_tab -= 1
+        if self.extracted_data["HIGHCAP"]:
             self.idx_tab += 1

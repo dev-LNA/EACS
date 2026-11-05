@@ -2,8 +2,8 @@ import json
 import unittest
 
 from header_formatter.header import (
+    General_ECHARPE_KWs,
     General_KWs,
-    General_SPARC4_KWs,
 )
 from header_formatter.setup import Header_Class_Setup
 from header_formatter.utils import general_s4_kw
@@ -38,7 +38,7 @@ class Test_General_Kws(unittest.TestCase):
         assert self.tester.fixed_data["CYCLIND"] == 1
 
 
-class Test_General_SPARC4_Kws(unittest.TestCase):
+class Test_General_ECHARPE_KWs(unittest.TestCase):
     def setUp(self) -> None:
         self._general_kw = {k.upper(): v for (k, v) in general_s4_kw.items()}
         self._hdr_data = dict.fromkeys(
@@ -50,7 +50,7 @@ class Test_General_SPARC4_Kws(unittest.TestCase):
             json.dumps(self._hdr_data), "00000000_s4c1_000001.fits"
         )
         kws_specs = setup.create_hdr_specs(General_KWs.name)
-        self.tester = General_SPARC4_KWs(kws_specs, hdr_cnt, log_file, file_name)
+        self.tester = General_ECHARPE_KWs(kws_specs, hdr_cnt, log_file, file_name)
         self.tester.write_header_all_apps(hdr_data)
         self.tester.get_app_header_data()
         self.tester.fix_original_string()

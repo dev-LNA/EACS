@@ -10,7 +10,6 @@ from header_formatter.utils import read_config_file
 
 class Header_Class_Setup:
     ext_app_classes = {
-        "sparc4": External_Applications,
         "echarpe": External_Applications,
         "tester": Test_Applications,
     }
