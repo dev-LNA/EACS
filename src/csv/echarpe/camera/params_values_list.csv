@@ -1,0 +1,7 @@
+parameter;values list
+ACQUISITION_MODE;["Single Scan", "Kinetic"]
+PREAMP;[1,2,4]
+READOUT_RATE;[0.05,1.00,3.00,5.00]
+VBIN;[1,2,4,8]
+HBIN;[1,2,4,8]
+SHUTTER_MODE;["Auto", "Open", "Closed"]
