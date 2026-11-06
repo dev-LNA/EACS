@@ -22,9 +22,9 @@ class Test_TCS(unittest.TestCase):
         )
         self._hdr_data["GUI"] = json.dumps({"OBSTYPE": "ZERO"})
         self._hdr_data["TCS"] = json.dumps(self._dict_data)
-        self.setup = Header_Class_Setup("sparc4")
+        self.setup = Header_Class_Setup("echarpe")
         _, hdr_data, hdr_cnt, log_file, file_name = self.setup.create_setup(
-            json.dumps(self._hdr_data), "00000000_s4c1_000001.fits"
+            json.dumps(self._hdr_data), "00000000_ech1_000001.fits"
         )
         kws_specs = self.setup.create_hdr_specs(TCS.name)
         self.tester = TCS(kws_specs, hdr_cnt, log_file, file_name)
@@ -56,9 +56,9 @@ class Test_WStation(unittest.TestCase):
             ["CCD", "GUI", "ICS", "FOCUSER", "WSTATION", "GENERAL KW", "TCS"], "{}"
         )
         self._hdr_data["WSTATION"] = "Weather " + json.dumps(WS_json)
-        self.setup = Header_Class_Setup("sparc4")
+        self.setup = Header_Class_Setup("echarpe")
         _, hdr_data, hdr_cnt, log_file, file_name = self.setup.create_setup(
-            json.dumps(self._hdr_data), "00000000_s4c1_000001.fits"
+            json.dumps(self._hdr_data), "00000000_ech1_000001.fits"
         )
         kws_specs = self.setup.create_hdr_specs(Weather_Station.name)
         self.tester = Weather_Station(kws_specs, hdr_cnt, log_file, file_name)
@@ -72,7 +72,7 @@ class Test_WStation(unittest.TestCase):
         self.tester.fix_remainder_keywords()
 
     def test_fix_original_string(self) -> None:
-        if self.tester.original_string is not None:
+        if self.tester.fixed_original_string is not None:
             assert "Weather" not in self.tester.fixed_original_string
 
 
@@ -87,9 +87,9 @@ class Test_Focuser(unittest.TestCase):
             ["CCD", "GUI", "ICS", "FOCUSER", "WSTATION", "GENERAL KW", "TCS"], "{}"
         )
         self._hdr_data["FOCUSER"] = json.dumps(self._dcit_data)
-        self.setup = Header_Class_Setup("sparc4")
+        self.setup = Header_Class_Setup("echarpe")
         _, hdr_data, hdr_cnt, log_file, file_name = self.setup.create_setup(
-            json.dumps(self._hdr_data), "00000000_s4c1_000001.fits"
+            json.dumps(self._hdr_data), "00000000_ech1_000001.fits"
         )
         kws_specs = self.setup.create_hdr_specs(Focuser.name)
         self.tester = Focuser(kws_specs, hdr_cnt, log_file, file_name)

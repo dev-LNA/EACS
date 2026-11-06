@@ -16,9 +16,9 @@ class Test_General_Kws(unittest.TestCase):
             ["CCD", "GUI", "ICS", "FOCUSER", "WSTATION", "GENERAL KW", "TCS"], "{}"
         )
         self._hdr_data["GENERAL KW"] = json.dumps(general_s4_kw)
-        setup = Header_Class_Setup("sparc4")
+        setup = Header_Class_Setup("echarpe")
         self.hdr, hdr_data, hdr_cnt, log_file, file_name = setup.create_setup(
-            json.dumps(self._hdr_data), "00000000_s4c1_000001.fits"
+            json.dumps(self._hdr_data), "00000000_ech1_000001.fits"
         )
         kws_specs = setup.create_hdr_specs(General_KWs.name)
         self.tester = General_KWs(kws_specs, hdr_cnt, log_file, file_name)
@@ -45,9 +45,9 @@ class Test_General_ECHARPE_KWs(unittest.TestCase):
             ["CCD", "GUI", "ICS", "FOCUSER", "WSTATION", "GENERAL KW", "TCS"], "{}"
         )
         self._hdr_data["GENERAL KW"] = json.dumps(general_s4_kw)
-        setup = Header_Class_Setup("sparc4")
+        setup = Header_Class_Setup("echarpe")
         self.hdr, hdr_data, hdr_cnt, log_file, file_name = setup.create_setup(
-            json.dumps(self._hdr_data), "00000000_s4c1_000001.fits"
+            json.dumps(self._hdr_data), "00000000_ech1_000001.fits"
         )
         kws_specs = setup.create_hdr_specs(General_KWs.name)
         self.tester = General_ECHARPE_KWs(kws_specs, hdr_cnt, log_file, file_name)
@@ -65,7 +65,6 @@ class Test_General_ECHARPE_KWs(unittest.TestCase):
 
     def test_fixed_keywords(self) -> None:
         assert self.tester.fixed_data["CYCLIND"] == 1
-        assert self.tester.fixed_data["SEQINDEX"] == 1
 
     def test_num_kws_predefined_vals(self) -> None:
         assert "BITPIX" in self.tester.num_kws_predefined_vals

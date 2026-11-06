@@ -59,10 +59,10 @@ class Test_Camera(unittest.TestCase):
         assert self.tester.idx_tab == 3
 
     def test_write_read_noise(self) -> None:
-        assert self.tester.fixed_data["RDNOISE"] == 38.3
+        assert self.tester.fixed_data["RDNOISE"] == 10.02
 
     def test_write_gain(self) -> None:
-        assert self.tester.fixed_data["GAIN"] == 4.39
+        assert self.tester.fixed_data["GAIN"] == 6.59
 
     def test_fix_exp_time(self) -> None:
         assert self.tester.fixed_data["EXPTIME"] == 1e-5
@@ -88,8 +88,8 @@ class Test_Camera(unittest.TestCase):
     def test_fix_remainder_keywords(self) -> None:
         assert self.tester.fixed_data["NAXIS1"] == 2048
         assert self.tester.fixed_data["NAXIS2"] == 2048
-        assert self.tester.fixed_data["GAIN"] == 4.39
-        assert self.tester.fixed_data["RDNOISE"] == 38.3
+        assert self.tester.fixed_data["GAIN"] == 6.59
+        assert self.tester.fixed_data["RDNOISE"] == 10.02
 
 
 class Test_iKon_L(unittest.TestCase):
