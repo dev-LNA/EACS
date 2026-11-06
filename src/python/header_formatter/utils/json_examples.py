@@ -160,7 +160,7 @@ general_s4_kw = {
 general_ech_kw = {
     "ACSVRSN": "v1.56.3",
     "ACSMODE": False,
-    "filename": "20260727ECHRED000013c.fits",
+    "filename": "20260723_ech1_000001_b.fits",
     "ncycles": 1,
     "cyclind": 0,
     "channel": 1,
@@ -203,13 +203,13 @@ ixon_kw = {
 }
 
 ikon_kw = {
-    "FILENAME": "20260723_s4c1_000001.fits",
+    "FILENAME": "20260723_ech1_000001_b.fits",
     "FRAMEIND": 0,
     "CCDTEMP": 0,
     "TEMPST": "TEMPERATURE_OFF",
     "CCDSERN": 31564,
-    "PREAMP": 0,
-    "READRATE": 0,
+    "PREAMP": 1,
+    "READRATE": 1,
     "VSHIFT": 0,
     "VCLKAMP": 0,
     "ACQMODE": 3,

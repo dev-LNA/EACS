@@ -6,14 +6,11 @@ from astropy.io import fits
 from header_formatter.header import (
     EICS,
     GUI,
-    S4ICS,
     TCS,
     Focuser,
     General_ECHARPE_KWs,
-    General_SPARC4_KWs,
     Weather_Station,
     iKon_L,
-    iXon_Ultra,
 )
 from header_formatter.post_processor import Post_Processor
 from header_formatter.setup import Header_Class_Setup
@@ -22,11 +19,8 @@ from header_formatter.utils import (
     egui_json,
     focuser_json,
     general_ech_kw,
-    general_s4_kw,
     ics_kw,
     ikon_kw,
-    ixon_kw,
-    s4gui_json,
     tcs_json,
 )
 
