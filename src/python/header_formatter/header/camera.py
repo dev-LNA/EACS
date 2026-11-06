@@ -52,7 +52,7 @@ class CCD(Header):
 
     def _find_index_tab(self) -> None:
         _json = self.extracted_data
-        self.idx_tab = 2 * _json["READRATE"] + _json["PREAMP"]
+        self.idx_tab = 2 * _json["READRATE"] + int(_json["PREAMP"][-1])
 
     def _fix_EXPTIME(self) -> None:
         if 1e-5 > self.fixed_data["EXPTIME"] > 9.999999e-6:
@@ -72,7 +72,7 @@ class CCD(Header):
 class iKon_L(CCD):
     def _find_index_tab(self) -> None:
         _json = self.extracted_data
-        preamp = _json["PREAMP"]
+        preamp = int(_json["PREAMP"][-1])
         readout_map = {0.05: 0, 1: 6, 3: 12, 5: 18}
         self.idx_tab = readout_map[_json["READRATE"]] + preamp
         if preamp == 1:

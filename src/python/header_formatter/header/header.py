@@ -247,7 +247,9 @@ class Header(ABC):
                         kw,
                     )
                     return
-                self.fixed_data[kw] = self.extracted_data[kw]
+                if self.hdr_cnt.keyword_types[kw] == "float":
+                    val = float(val)
+                self.fixed_data[kw] = val
             except Exception as e:  # type:ignore
                 self._write_log_file(repr(e), kw)
 
@@ -278,7 +280,7 @@ class Header(ABC):
                     continue
                 if not isinstance(val, self.kw_types[_type]):
                     self._write_log_file(
-                        f'Keyword value "{val}" is not an instance of {repr(_type)}.',
+                        f'Keyword value "{val}" is not an instance of {_type!r}: {type(val)}',
                         hdr_kw,
                     )
                     continue

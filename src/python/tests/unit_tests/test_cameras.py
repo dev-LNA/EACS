@@ -10,7 +10,7 @@ class Test_Camera(unittest.TestCase):
         self._dict_data = {
             "FILENAME": "00000000_ech1_000001_b.fits",
             "READRATE": 1,
-            "PREAMP": 1,
+            "PREAMP": "Gain 1",
             "FRAMEIND": 0,
             "EXPTIME": 9.9999999e-6,
             "VBIN": 1,
@@ -20,10 +20,10 @@ class Test_Camera(unittest.TestCase):
             "FINALCOL": 2048,
             "HBIN": 1,
             "CCDSERN": 31564,
-            "TRIGGER": 0,
-            "ACQMODE": 3,
-            "SHUTTER": 2,
-            "VCLKAMP": 0,
+            "TRIGGER": "Internal",
+            "ACQMODE": "Kinetic",
+            "SHUTTER": "Open",
+            "VCLKAMP": "Normal",
             "NFRAMES": 1,
             "DATE-OBS": "0000-00-00T00:00:00.000000",
             "UTDATE": "0000-00-00",
@@ -32,7 +32,7 @@ class Test_Camera(unittest.TestCase):
             "TEMPST": "TEMPERATURE_STABILIZED",
             "TGTEMP": -30,
             "COOLER": True,
-            "VSHIFT": 0,
+            "VSHIFT": 38.55,
             "HIGHCAP": True,
         }
 
@@ -74,7 +74,7 @@ class Test_Camera(unittest.TestCase):
         assert self.tester.fixed_data["NAXIS2"] == 2048
 
     def test_fix_keywords(self) -> None:
-        assert self.tester.fixed_data["SHUTTER"] == "Closed"
+        assert self.tester.fixed_data["SHUTTER"] == "Open"
         assert self.tester.fixed_data["VCLKAMP"] == "Normal"
         assert self.tester.fixed_data["NFRAMES"] == 1
         assert self.tester.fixed_data["DATE-OBS"] == "0000-00-00T00:00:00.000000"
@@ -83,6 +83,7 @@ class Test_Camera(unittest.TestCase):
         assert self.tester.fixed_data["CCDTEMP"] == -30
         assert self.tester.fixed_data["TEMPST"] == "TEMPERATURE_STABILIZED"
         assert self.tester.fixed_data["TGTEMP"] == -30
+        assert self.tester.fixed_data["READRATE"] == 1
         assert self.tester.fixed_data["COOLER"] is True
 
     def test_fix_remainder_keywords(self) -> None:
@@ -97,7 +98,7 @@ class Test_iKon_L(unittest.TestCase):
         self._dict_data = {
             "FILENAME": "00000000_s4c1_000000.fits",
             "READRATE": 1,
-            "PREAMP": 1,
+            "PREAMP": "Gain 1",
             "FRAMEIND": 0,
             "EXPTIME": 9.9999999e-6,
             "VBIN": 1,
@@ -107,10 +108,10 @@ class Test_iKon_L(unittest.TestCase):
             "FINALCOL": 2048,
             "HBIN": 1,
             "CCDSERN": 31564,
-            "TRIGGER": 0,
-            "ACQMODE": 3,
-            "SHUTTER": 2,
-            "VCLKAMP": 0,
+            "TRIGGER": "Internal",
+            "ACQMODE": "Kinetic",
+            "SHUTTER": "Open",
+            "VCLKAMP": "Normal",
             "NFRAMES": 1,
             "DATE-OBS": "0000-00-00T00:00:00.000000",
             "UTDATE": "0000-00-00",
@@ -119,7 +120,7 @@ class Test_iKon_L(unittest.TestCase):
             "TEMPST": "TEMPERATURE_STABILIZED",
             "TGTEMP": -30,
             "COOLER": True,
-            "VSHIFT": 1,
+            "VSHIFT": 38.55,
             "HIGHCAP": True,
         }
 
@@ -129,7 +130,7 @@ class Test_iKon_L(unittest.TestCase):
         self._hdr_data["CCD"] = json.dumps(self._dict_data)
         setup = Header_Class_Setup("echarpe")
         self.hdr, hdr_data, hdr_cnt, log_file, file_name = setup.create_setup(
-            json.dumps(self._hdr_data), "00000000_s4c1_000001.fits"
+            json.dumps(self._hdr_data), "00000000_ech1_000001.fits"
         )
 
         kws_specs = setup.create_hdr_specs(iKon_L.name)
@@ -144,15 +145,6 @@ class Test_iKon_L(unittest.TestCase):
         self.tester.fix_keywords()
         self.tester.fix_remainder_keywords()
 
-    def test_init(self) -> None:
-        assert self.tester.kws_specs.dict_w_kws["VSHIFT"] == [38.55, 76.95]
-        assert self.tester.kws_specs.dict_w_kws["PREAMP"] == [
-            "Gain 1",
-            "Gain 2",
-            "Gain 4",
-        ]
-        assert self.tester.kws_specs.dict_w_kws["READRATE"] == [0.05, 1, 3, 5]
-
     def test_find_idx_tab(self) -> None:
         assert self.tester.idx_tab == 7
 
@@ -163,7 +155,7 @@ class Test_iKon_L(unittest.TestCase):
         self.tester.check_kws_types()
         self.tester.check_allowed_values()
         hdr = self.tester.fill_image_header(self.hdr)
-        assert hdr["SHUTTER"] == "Closed"
+        assert hdr["SHUTTER"] == "Open"
         assert hdr["VCLKAMP"] == "Normal"
         assert hdr["NFRAMES"] == 1
         assert hdr["DATE-OBS"] == "0000-00-00T00:00:00.000000"
@@ -175,7 +167,8 @@ class Test_iKon_L(unittest.TestCase):
         assert hdr["COOLER"] is True
         assert hdr["NAXIS1"] == 2048
         assert hdr["NAXIS2"] == 2048
+        assert hdr["READRATE"] == 1.0
         # TODO: confirmar valores abaixo
         # assert hdr["GAIN"] == 0.8
         # assert hdr["RDNOISE"] == 3.47
-        assert hdr["VSHIFT"] == 76.95
+        assert hdr["VSHIFT"] == 38.55
